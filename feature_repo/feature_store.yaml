@@ -1,0 +1,12 @@
+project: repo
+registry: registry.db
+provider: aws
+online_store:
+    type: sqlite
+    path: online_store.db
+offline_store:
+    type: feast_custom_offline_store.athena.AthenaOfflineStore
+    region: ap-northeast-2
+    database: dev
+    data_source: AwsDataCatalog
+    s3_staging_location: s3://my-feast-project-aws-bucket-yelo
